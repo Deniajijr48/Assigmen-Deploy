@@ -1,5 +1,5 @@
-import './App.css'
-import { Routes, Route, Link } from 'react-router-dom'
+import './App.css';
+import { Routes, Route, Link } from 'react-router-dom';
 import EditPhoto from './routes/EditPhoto';
 import Home from './routes/Home';
 import Photos from './routes/Photos';
@@ -9,13 +9,14 @@ import NotFound from './routes/NotFound';
 const App = () => {
   return (
     <>
-      <div className='navbar'>
-        <div className='studentInfo'>
-          {/* TODO: answer here */}
+      <div className="navbar">
+        <div className="studentInfo">
+          <h2 className="studentName">Deni Eka Aji Jaya Ramadhan</h2>
+          <p className="studentId">FE2527348</p>
         </div>
-        <Link to='/'>Home</Link>
-        <Link to='/photos'>My Photos</Link>
-        <Link to='/add'>Add Photo</Link>
+        <Link to="/">Home</Link>
+        <Link to="/photos">My Photos</Link>
+        <Link to="/add">Add Photo</Link>
       </div>
 
       <Routes>
