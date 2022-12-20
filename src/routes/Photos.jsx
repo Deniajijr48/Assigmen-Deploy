@@ -16,7 +16,7 @@ const Photos = () => {
     })
       .then((response) => response.json())
       .then((photos) => {
-        setPhotos(photos.filter((photo) => photo.id != id));
+        setPhotos(photos.filter((photo) => photo.id !== id));
       });
     // TODO: answer here
   };
@@ -31,7 +31,7 @@ const Photos = () => {
       setLoading(false);
     };
     fetchData();
-  }, [sort, submited]);
+  }, [sort, submited, search]);
 
   useEffect(() => {
     setLoading(true);
