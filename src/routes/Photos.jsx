@@ -45,7 +45,6 @@ const Photos = () => {
     }
     // TODO: answer here
   }, []);
-  tjf - fbxu - hoj;
   if (error) return <h1 style={{ width: '100%', textAlign: 'center', marginTop: '20px' }}>Error!</h1>;
 
   return (
