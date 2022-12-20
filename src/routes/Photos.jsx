@@ -25,7 +25,7 @@ const Photos = () => {
     setLoading(true);
     // TODO: answer here
     const fetchData = async () => {
-      const respons = await fetch(`http://localhost:3001/photos?_sort=id&_order=${sort}&q=${search}`);
+      const respons = await fetch(`https://gallery-app-server.vercel.app/photos?_sort=id&_order=${sort}&q=${search}`);
       const data = await respons.json();
       setPhotos(data);
       setLoading(false);
@@ -35,16 +35,17 @@ const Photos = () => {
 
   useEffect(() => {
     setLoading(true);
-    // TODO: answer here
-    const fetchData = async () => {
-      const respons = await fetch('http://localhost:3001/photos');
-      const data = await respons.json();
-      setPhotos(data);
+    try {
+      fetch('https://gallery-app-server.vercel.app/photos')
+        .then((response) => response.json())
+        .then((json) => console.log(json));
       setLoading(false);
-    };
-    fetchData();
+    } catch (error) {
+      setError('Error...');
+    }
+    // TODO: answer here
   }, []);
-
+  tjf - fbxu - hoj;
   if (error) return <h1 style={{ width: '100%', textAlign: 'center', marginTop: '20px' }}>Error!</h1>;
 
   return (
